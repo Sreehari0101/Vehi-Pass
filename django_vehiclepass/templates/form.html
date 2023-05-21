@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Application Form{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <h1 class="text-center mt-5">Vehicles Pass Form</h1>
+      <form action="{% url 'formapply' %}" method="post" enctype="multipart/form-data" class="mt-4">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="id_name" class="form-label">Name</label>
+          <input type="text" name="name" id="id_name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="id_admission_number" class="form-label">Admission Number</label>
+          <input type="text" name="admission_number" id="id_admission_number" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="id_department" class="form-label">Department</label>
+          <input type="text" name="department" id="id_department" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="id_semester" class="form-label">Semester</label>
+          <input type="number" name="semester" id="id_semester" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="id_registration_number" class="form-label">Registration Number</label>
+          <input type="text" name="registration_number" id="id_registration_number" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="id_registration_certificate_photo" class="form-label">Registration Certificate Photo</label>
+          <input type="file" name="registration_certificate_photo" id="id_registration_certificate_photo" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="id_license_photo" class="form-label">License Photo</label>
+          <input type="file" name="license_photo" id="id_license_photo" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="id_insurance_photo" class="form-label">Insurance Photo</label>
+          <input type="file" name="insurance_photo" id="id_insurance_photo" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="id_owner_declaration_photo" class="form-label">Owner Declaration Photo</label>
+          <input type="file" name="owner_declaration_photo" id="id_owner_declaration_photo" class="form-control" required>
+        </div>
+       
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+</div>
+{% endblock %}
