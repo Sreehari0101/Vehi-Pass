@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Vehicle Pass{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center mt-5">Vehicle Pass</h1>
+  <form method="POST" action="{% url 'vehiclepass' %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="registration_number">Enter Registration Number:</label>
+      <input type="text" class="form-control" id="registration_number" name="registration_number" required>
+    </div>
+    <br>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Generate QR Code</button>
+    </div>
+  </form>
+  
+  {% if booking %}
+    <h3 class="text-center mt-4">VEHICLE PASS NO: {{ booking.id }}</h3>
+    <div class="text-center">
+      <img src="{{ qr_code_url }}" alt="QR Code" class="img-fluid">
+    </div>
+  {% endif %}
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,160 @@
+{% extends 'base.html' %} 
+{% block title %}About{% endblock %}
+
+{% block content %}
+{% load static %}
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+.heading {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.heading h1 {
+  font-size: 50px;
+  color: #000;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.heading h1::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  display: block;
+  margin: 0 auto;
+  background-color: #4caf50;
+}
+
+.heading p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 35px;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  flex: 1;
+  margin-right: 40px;
+  overflow: hidden;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  transition: 0.5s ease;
+}
+
+.about-content {
+  flex:1;
+}
+
+.about-content h2 {
+  font-size: 23px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.about-content .read-more {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 19px;
+  text-decoration: none;
+  border-radius: 25px;
+  margin-top: 15px;
+  transition: 0.3s ease;
+}
+
+.about-content .read-more:hover {
+  background-color: #3e8e41;
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    padding: 0 20px;
+  }
+  .heading h1 {
+    font-size: 36px;
+  }
+  .heading p {
+    font-size: 17px;
+    margin-bottom: 0;
+  }
+  .container {
+    padding: 20px;
+    flex-direction: column;
+  }
+  .about {
+    padding: 20px;
+    flex-direction: column;
+  }
+  .about-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+</style>
+
+<div class="heading">
+  <h1>About Us</h1>
+  <p>The Vehicle Pass Management System allows you to obtain a pass for your vehicle to enter the campus.</p>
+</div>
+
+<div class="container">
+  <section class="about">
+    <div class="about-image">
+      <img src="{% static '/images/about3.jpg' %}">
+    </div>
+    <div class="about-content">
+      <h2>Steps to follow:</h2>
+      <p>
+       Step1: Provide the necessary details and upload photos of all the required documents mentioned in the form.<br>
+       Step2: Submit the details and await approval.<br>
+       Step3: Once approved, you can view your pass on the QR Code page by searching for your vehicle registration number.
+      </p>
+      <a href="/form" class="read-more">Apply now</a>
+    </div>
+  </section>
+</div>
+{% endblock %}
+
+
+
