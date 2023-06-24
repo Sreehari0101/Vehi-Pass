@@ -24,7 +24,7 @@ class BookingAdmin(admin.ModelAdmin):
             box_size=10,
             border=4,
             )
-            qr.add_data('http://172.16.17.76/booking-details/{}/'.format(obj.id))  # for QR code data
+            qr.add_data('192.168.127.140:8000/booking-details/{}/'.format(obj.id))  # for QR code data
             qr.make(fit=True)
             qr_image = qr.make_image(fill_color="black", back_color="white")
 

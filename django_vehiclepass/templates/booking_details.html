@@ -1,24 +1,49 @@
+
 {% extends 'base.html' %}
 
 {% block title %}Booking Details{% endblock %}
 
 {% block content %}
-<div class="container">
-  <h1 class="text-center mt-5">Booking Details</h1>
+<style>
+  .pass-details {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  .pass-details h1 {
+    font-weight: bold;
+    margin-top: 50px;
+  }
+
+  .pass-details .card-text:before {
+    font-weight: bold;
+  }
+  .card-text b {
+    display: inline-block;
+  }
+</style>
+
+<div class="container pass-details">
+  <h1 class="mt-5">PASS DETAILS</h1>
 
   <div class="card mt-4">
     <div class="card-body">
-      <h5 class="card-title">Booking ID: {{ booking.id }}</h5>
-      <p class="card-text">Name: {{ booking.name }}</p>
-      <p class="card-text">Admission Number: {{ booking.admission_number }}</p>
-      <p class="card-text">Department: {{ booking.department }}</p>
-      <p class="card-text">Semester: {{ booking.semester }}</p>
-      <p class="card-text">Registration Number: {{ booking.registration_number }}</p>
-      <div class="text-center mt-4">
+      <div class="mt-4">
         <img src="{{ booking.user_photo.url }}" alt="User Photo" class="img-fluid">
       </div>
+      <br>
+      <p class="card-text"><b>Vehicle Pass no:</b> {{ booking.id }}</p>
+      <p class="card-text"><b>Name</b>: {{ booking.name }}</p>
+      <p class="card-text"><b>Admission Number</b>: {{ booking.admission_number }}</p>
+      <p class="card-text"><b>Department</b>: {{ booking.department }}</p>
+      <p class="card-text"><b>Semester</b>: {{ booking.semester }}</p>
+      <p class="card-text"><b>Vehicle registration Number</b>: {{ booking.registration_number }}</p>
+      
     </div>
   </div>
 </div>
 {% endblock %}
+
+
+
 

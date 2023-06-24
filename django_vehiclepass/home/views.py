@@ -62,15 +62,12 @@ def vehiclepass(request):
            return redirect('vehiclepass')  # Redirect back to the pass page
     return render(request, 'pass.html')
 
-@login_required
-def contact(request):
-    return render(request,'contact.html')
 
 def confirmation(request):
     return render(request, 'confirmation.html')
 
 def booking_details(request, booking_id):
-    base_url = 'http://192.168.1.6:8000'
+    base_url = 'http://192.168.127.140:8000'
     booking = get_object_or_404(Booking, id=booking_id)
     booking_url = base_url + reverse('booking_details', args=[booking_id])
     return render(request, 'booking_details.html', {'booking': booking, 'booking_url': booking_url})

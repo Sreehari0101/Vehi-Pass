@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-vodb@l*n^3%@fs)n!f2%!)v4gbd5huo4he6i-2qy4owa+*=!uf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.6','192.168.1.7','172.16.17.76','127.0.0.1',]
+ALLOWED_HOSTS = ['192.168.1.6','192.168.1.7','172.16.17.76','127.0.0.1','192.168.127.140']
 
 
 

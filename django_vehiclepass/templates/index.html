@@ -3,50 +3,137 @@
 {% block title%}
 Home
 {% endblock %}
-
+{% block styles %} <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Montserrat&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">  {% endblock %}
 {% block content%}
 
 {% load static %}
 <style>
-  .carousel {
-    height: 100vh; /* Set the height to 100% of the viewport height */
-  }
-  .carousel-inner {
-    height: 100%; /* Set the height of the carousel items to 100% */
-  }
-  .carousel-item img {
-    object-fit: cover; /* Make the images cover the entire carousel item */
-    height: 100%; /* Set the height of the images to 100% */
-  }
-  </style>
+.home{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Dosis', sans-serif;
+}
+.home{
+  height: 100vh;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home .main img{
+  width: 580;
+  max-width: 100%;
+  height: auto;
+  padding:0 10px;
+}
+.all-text{
+  width: 600px;
+  max-width: 100%;
+  padding: 0 10px;
+}
+.main{
+  width: 1290px;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.all-text h4{
+  font-family: 'Roboto' , sans-serif;
+  font-size: 18px;
+  color: #777777;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.all-text h1{
+ font-size: 65px;
+ color: #111111;
+ font-weight: 700;
+ margin-bottom: 20px;
+}
+.all-text p{
+  font-family: 'Roboto' ,sans-serif;
+  font-sizw: 16px;
+  color: #777777;
+  line-height: 30px;
+  margin-bottom: 35px;
+}
+.btn button{
+  background: white;
+  padding: 20px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #111111;
+  border: none;
+  outline: none;
+  box-shadow: 0px 16px 32px 0px rgb(0 0 0 / 6%);
+  margin-right: 20px;
+}
+.btn button:hover{
+  background-color: #3e8e41;
+  color: white;
+  transition: .3s;
+  cursor: pointer;
+}
+.btn .btn2{
+  background: #111111;
+  color: white;
+}
 
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="10000">
-        <img src="{% static '/images/home1.jpg'%}" class="d-block w-100" alt="...">
+@media screen and (max-width: 1250px){
+  .home{
+    width: 100%;
+    height: auto;
+    padding: 60px 0;
+  }
+  .all-text{
+    text-align: center;
+    margin-top: 40px;
+  }
+  }
+  @media screen and (max-width: 650px){
+    .home .main img{
+    margin-bottom: 35px;
+  }
+  .all-text h1{
+    font-size: 45px;
+    margin-bottom: 20px;
+  }
+}
+</style>
+ <section class ="home">
+  <div class="main">
+    <img src ="{% static '/images/selfparki.png' %}">
+    <div class="all-text">
+      <h4> Group 11 </h4>
+      <h1> JYO-PASS </h1>
+      <p>Welcome to our innovative vehicle pass management system, simplifying your vehicle pass approval process with efficiency and convenience.Experience hassle-free access control and streamlined pass management with our cutting-edge solution.  </p>
+      <div class ="btn">
+        <button type ="button" onclick="window.location.href='/form'"> Apply now </button>
+        <button type="button" class="btn2" onclick="window.location.href='/pass'">View pass</button>
+
       </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="{% static '/images/home2.jpg'%}" class="d-block w-100" alt="...">
-        
-      </div>
-      <div class="carousel-item">
-        <img src="{% static '/images/home3.jpg'%}" class="d-block w-100" alt="...">
-        
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
+</section>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
 
 {% endblock %}

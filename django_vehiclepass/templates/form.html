@@ -52,8 +52,14 @@ Application Form
             <label for="registration_number">Vehicle Registration Number</label>
             <input type="text" placeholder="Enter your registration number" id="registration_number" name="registration_number" required>
           </div>
-
-
+         
+          <script>
+            document.getElementById("registration_number").addEventListener("input", function() {
+              var input = this.value.toLowerCase();
+              this.value = input;
+            });
+          </script>
+          
           <div class="user-input-box">
             <label for="user_photo">Your  Photo</label>
             <input type="file" class="form-control-file" id="user_photo" name="user_photo" required>
@@ -114,7 +120,7 @@ Application Form
         border-radius: 10px;
         box-shadow: inset -2px 2px 2px white;
         margin-top: 20px;
-    
+    }
     .form-title{
         font-size: 26px;
         font-weight: 600;
