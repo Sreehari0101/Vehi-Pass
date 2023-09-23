@@ -7,7 +7,7 @@
 ### Home page
 ![dashboard snap](https://github.com/sumitkumar1503/bloodbankmanagement/blob/master/static/screenshot/admindashboard.png?raw=true)
 ### Vehicle pass
-![invoice snap](https://github.com/sumitkumar1503/bloodbankmanagement/blob/master/static/screenshot/blooddonation.png?raw=true)
+![invoice snap](https://github.com/Sreehari0101/Vehi-Pass/blob/main/vehicle_pass%20(99).png))
 
 ## Functions
 
